@@ -1,0 +1,10 @@
+h1{
+    color: rgb(129, 255, 213);
+}
+
+p{
+    font-size: 2rem;
+    color: brown;
+    background-color: black;
+    font-style: oblique;
+}

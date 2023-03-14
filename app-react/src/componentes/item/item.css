@@ -1,0 +1,55 @@
+.itemCardContenedor{
+    margin: 2rem;
+}
+
+.itemCardContenedor:hover{
+    transform: translateY(-5.5px);
+    box-shadow: 3.5px 3.5px 4px 2px grey ;
+}
+
+.itemCardTitulo{
+    font-weight: bolder;
+    color: black;
+}
+
+.itemCardImg:hover{
+    border: red;
+}
+
+.navbar-expand-lg{
+    height: 8rem;
+}
+
+#navbarSupportedContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-nav{
+    margin: 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-brand{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+.carrito{
+    margin-left: 15rem;
+    font-size: 2rem;
+}
+
+.logo{
+    height: 6rem;
+    width: 6rem;
+}
+
+.productos{
+    display: flex;
+    flex-direction: column;
+}

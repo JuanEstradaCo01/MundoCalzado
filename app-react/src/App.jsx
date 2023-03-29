@@ -1,47 +1,28 @@
-
 import './App.css';
-import Saludo from "./componentes/ItemListContainer"
+import NavBar from './componentes/Nav/NavBar';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ItemListContainer from './componentes/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer';
 import Boton from './componentes/Boton';
-import Item from "./componentes/item";
-import Flex from "./componentes/item/flex/Flex";
-import BootstrapEx from "./componentes/Bootstrap/Bootstrap";
 
 
 function App() {
   return (
     <div className="App">
-      <BootstrapEx/>
-      <header className="App-header">
-        <Saludo color="orange" letra="black" borde="20%"/>
-        <Boton color="orange"/>
-        <button onClick={() => { alert("Aca encontraras todo lo que necesitas")}}>¡clickeame!</button>
-          <Flex>
-            <Item
-              img= ""
-              titulo="Tenis" 
-              precio="75"
-              descripcion="Calzado que re va contigo"
-            />
-            <Item
-              img= ""
-              titulo="Tenis" 
-              precio="75"
-              descripcion="Calzado que re va contigo"
-            />
-            <Item
-              img= ""
-              titulo="Tenis" 
-              precio="75"
-              descripcion="Calzado que re va contigo"
-            />
-            <Item
-              img= ""
-              titulo="Tenis" 
-              precio="75"
-              descripcion="Calzado que re va contigo"
-            />
-          </Flex>
-        </header>
+      <BrowserRouter>  
+
+          
+        <NavBar/>
+        <Boton/>
+        <Routes>   
+          <Route path="/" element={ <ItemListContainer/> } /> 
+          <Route path="/category/:categoryid" element={ <ItemListContainer/> } /> 
+          <Route path="/item/:id" element={ <ItemDetailContainer/> } />
+          <Route path="*" element= { <h1>Error 404: Pagina no encontrada</h1> } />         
+        </Routes>
+
+        
+      </BrowserRouter>
     </div>
   );
 }

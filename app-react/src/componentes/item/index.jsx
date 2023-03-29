@@ -1,15 +1,23 @@
+import { Link } from "react-router-dom";
 import "./item.css"
-import Tenis1 from "../imgs/tenis-1.jpg"
 
 function Item(props){
+
     return (
-    <div className="itemCardContenedor">
-        <img src={Tenis1} className="itemCardImg" alt="imagen"></img>
+    <div id={props.id} className="itemCardContenedor">
+        <img  src={props.img} className="itemCardImg" alt="imagen"></img>
         <div className="itemCardTitulo">
             <h2>{props.titulo}</h2>
+            <h5>{props.color}</h5>
         </div>
+        <span>{props.contador}</span>
         <h4>$ {props.precio}</h4>
-        <p>{props.descripcion}</p>
+        <ul className="verDetalle">
+            <li>
+            <Link to={`/item/${props.id}-${props.titulo}`}><button className="BotonDetalle">Ver detalles</button></Link>
+            </li>
+        </ul>
+        <p>{props.categoria}</p>
     </div>
     )
 }

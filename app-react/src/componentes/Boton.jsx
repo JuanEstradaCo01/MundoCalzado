@@ -1,14 +1,21 @@
-import "../App.css"
+import React from "react"
+import { useState } from "react"
+
 
 function Boton(props){
 
-    function click(){
-        alert("Hiciste click")
+    let [color, setColor] = useState("yellow")
+
+    function cambioDeColor() {
+        alert ("Se cambio de color")
+        setColor("white")
     }
+    
 
     return (
-        <button className="boton"  onClick={click}>Click</button>
+        <button style={{backgroundColor: color}}  onClick={cambioDeColor}> {props.children}Mas informacion</button>
     )
 }
 
 export default Boton;
+

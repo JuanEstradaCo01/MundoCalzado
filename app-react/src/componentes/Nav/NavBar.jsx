@@ -1,12 +1,16 @@
-import React from "react"
+import React, { useContext } from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
+import { faUser } from "@fortawesome/free-solid-svg-icons"
 import Logo from "../imgs/Logo.png"
 import { Link } from "react-router-dom"
+import { cartContext } from "../../context/cartContext"
+import "../item/item.css"
 
 
 
 function NavBar() {
+    const { cart } = useContext(cartContext)
     return (
 
 
@@ -16,31 +20,44 @@ function NavBar() {
 
                 <h1 className="NavTitulo">MUNDO CALZADO</h1>
 
-                <li className="NavLi">
+                <Link to="/form" className="user">
+                    <FontAwesomeIcon icon={faUser} />
+                </Link>
+
+                <li  className="NavLi">
                     <Link to="/">Home</Link>
                 </li>
 
-                <li className="NavLi">
-                    <Link to="/category/Tenis">Tenis</Link>
+                <li  className="NavLi">
+                    <Link to="/category/Deportivo">Deportivos</Link>
                 </li>
 
-                <li className="NavLi">
-                    <Link to="/item">Detalle</Link>
+                <li  className="NavLi">
+                    <Link to="/category/Casual">Casual</Link>
                 </li>
 
-                <Link to="#" className="carrito">
-                    <FontAwesomeIcon icon={faCartShopping}/>
+                <li  className="NavLi">
+                    <Link to="/category/Calzado para montaña">Montaña</Link>
+                </li>
+
+                <Link to="/carrito"  className="carrito">
+                    <FontAwesomeIcon icon={faCartShopping}/><span>{cart.length}</span>
                 </Link>
             </ul>
         </nav>
 
-
+/*
         //(Bootstrap)
-        /*<div >
+        <div >
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
                 <div className="container-fluid">
-                    <a href="#"><img className="logo" src={Logo} alt="logo" /></a>
-                    <a className="navbar-brand" href="#">Mundo calzado</a>
+                    <Link to="/"><img className="LogoNav" src={Logo} alt="Logo" /></Link>
+
+                    <h1 className="NavTitulo">MUNDO CALZADO</h1>
+
+                    <Link to="/form" className="user">
+                    <FontAwesomeIcon icon={faUser} />
+                    </Link>
                     
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -52,14 +69,21 @@ function NavBar() {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav  mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <a to="#" className="nav-link active" aria-current="page">Home</a>
+                                <Link to="/" className="nav-link active" aria-current="page">Home</Link>
+                                <li className="NavLi">
+                            </li>
                             </li>
                             <li className="nav-item">
-                                <a to="#" className="nav-link active" aria-current="page">Masculino</a>
+                                <link to="/category/Deportivo" className="nav-link active" aria-current="page">Deportivos</link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="#">Femenino</a>
+                                <Link className="nav-link active" aria-current="page" href="/item">Detalle</Link>
                             </li>
+
+                            <Link to="#" className="carrito">
+                                <FontAwesomeIcon icon={faCartShopping}/>
+                            </Link>
+
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Categorias

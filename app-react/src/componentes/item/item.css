@@ -1,8 +1,10 @@
 .itemCardContenedor{
     margin: 2rem;
-    padding: 5rem;
+    padding: 2.5rem;
     width: 50rem;
     height: auto;
+    background-color: rgba(5, 184, 197, 0.829);
+    border-radius: 2rem;
 }
 
 .itemCardContenedor:hover{
@@ -50,6 +52,8 @@
 
 .carrito{
     display: flex;
+    justify-content: center;
+    align-items: center;
     margin-left: 15rem;
     font-size: 2rem;
 }
@@ -60,22 +64,34 @@
 }
 
 .productos{
-    margin: 3rem;
+    
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: rgb(56, 55, 55);
 }
 
 .NavBar{
     display: flex;
     flex-direction: row;
-    background-color: beige;
+    background-color: rgb(1, 45, 51);
+    margin: 0;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+    color: white;
 }
 
 .LogoNav{
     height: 12rem;
     width: 12rem;
+}
+
+.LogoNav:hover{
+    transform: scale(1.05)
 }
 
 .NavTitulo{
@@ -85,7 +101,6 @@
     font-size: 1.5rem;
     font-weight: bolder;
     font-family: cursive;
-    text-decoration: none;
 }
 
 .NavLi{
@@ -94,6 +109,7 @@
     align-items: center;
     flex-direction: end;
     list-style: none;
+    text-decoration: none;
     padding: 20px;
     font-size: 1.5rem;
 }
@@ -120,10 +136,122 @@
     list-style: none;
 }
 
+
+.contenedorCounter{
+    margin: 1rem;
+}
+
 .contarMenos{
-    background-color: rgb(253, 173, 173);
+    background-color: rgb(0, 22, 68);
+    color: white;
+}
+.contarMenos:hover{
+    transform: scale(1.1)
 }
 
 .contarMas{
-  background-color: rgb(126, 236, 126);
+  background-color: rgb(0, 22, 68);
+  color: white;
+}
+.contarMas:hover{
+    transform: scale(1.1)
+}
+
+.spanCounter{
+    font-weight: bolder;
+    margin: 0rem .5rem 0rem .5rem;
+}
+
+.user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15rem;
+    margin-right: 2rem;
+    font-size: 2rem;
+
+}
+
+#iconLogin{
+    margin: 5rem;
+    color: grey;
+    width: 6rem;
+    height: 6rem;
+}
+
+.botonAgregar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 15rem;
+    height: 2rem;
+    background-color: rgb(26, 101, 172);
+    border-radius: .5rem;
+  }
+
+  .botonAgregar:hover{
+    transform: scale(1.12)
+  }
+  
+.botonComprar{
+    background-color: rgb(146, 5, 5);
+    color: rgb(255, 255, 255);
+    padding: .5rem 2rem;
+    margin-bottom: 5rem;
+    border-radius: 2rem;
+}
+
+.botonComprar:hover{
+    background-color: rgb(255, 0, 0);
+    transform: scale(1.1);
+}
+
+.count{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginImg{
+    width: 6rem;
+    height: 6rem;
+}
+
+img{
+    border-radius: 2rem;
+}
+
+#imgDetail{
+    margin-top: 4rem;
+    width: 35rem;
+    border-radius: 2rem;
+}
+
+.carritoContenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem;
+    background-color: rgb(238, 238, 114);
+    border-radius: 2rem;
+}
+
+.imgCarrito{
+    margin: 1rem;
+    width: 20rem;
+}
+
+.itemCarrito{
+    margin: 3.5rem;
+}
+
+.h1Carrito{
+    margin-top: 1rem;
+    height: 7rem;
+    background-color: rgba(251, 255, 6, 0.925);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

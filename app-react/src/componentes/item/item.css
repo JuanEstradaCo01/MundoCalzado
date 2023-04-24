@@ -255,3 +255,20 @@ img{
     justify-content: center;
     align-items: center;
 }
+
+.colorPrecioTotal{
+    color: green;
+}
+
+.inputFinalizar{
+    color: white;
+}
+
+.formContenedor{
+    font-size: 1.3rem;
+    background-color: rgb(95, 92, 92);
+}
+
+input{
+    width: 25;
+}

@@ -3,7 +3,6 @@ import Item from "../item";
 import Flex from "../item/flex/Flex";
 import {useState} from "react";
 import { useParams } from "react-router-dom";
-import Contador from "../Contador/Contador";
 import { getItems, getItemsByCategory } from "../../servicios/firestore";
 import Loader from "../Loader/Loader";
 

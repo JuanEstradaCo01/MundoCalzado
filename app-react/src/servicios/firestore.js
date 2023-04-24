@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, doc, getDoc, query, where } from "firebase/firestore";
+import { getFirestore, collection, getDocs, doc, getDoc, query, where, addDoc } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBTK_08fBcNe1BIlOCBh5qfEwBRhdl5En4",
@@ -65,4 +65,11 @@ export async function getItemsByCategory(categoryURL){
    });
   return docsData;
 
+}
+
+
+export async function createOrder(order){
+  const collectionOrdersRef = collection(db, "orders")
+  const respuesta = await addDoc(collectionOrdersRef, order)
+  return respuesta.id
 }

@@ -3,7 +3,9 @@ import React from "react";
 import { cartContext } from "../../context/cartContext";
 import { createOrder } from "../../servicios/firestore";
 import swal from "sweetalert";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 
 function Carrito(){
@@ -11,6 +13,11 @@ function Carrito(){
     const context = useContext(cartContext)
     const { cart, getTotalPrice } = context;
    
+    if (cart.length === 0 ){
+        return(         
+            <h1 className="h1Carrito">Tu carrito esta vacio... Ingresa productos de la tienda haciendo click<Link to="/">Aqui</Link></h1>              
+        )
+    }else{
 
     async function CheckOut(){
         
@@ -46,6 +53,10 @@ function Carrito(){
                     <p className="itemCarrito">Cantidad: {item.contador}</p>
                     <p className="itemCarrito">Color: {item.color}</p>
                     <p className="itemCarrito">Precio unitario: ${item.precio}</p>
+                    <button className="eliminar">
+                        <FontAwesomeIcon icon={faTrash} />
+                    </button>
+                      
                     <hr />
                 </div>               
             ))}
@@ -94,6 +105,6 @@ function Carrito(){
 )
 
 }
-
+}
 
 export default Carrito;

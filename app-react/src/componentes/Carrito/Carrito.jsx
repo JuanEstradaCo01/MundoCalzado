@@ -6,12 +6,14 @@ import swal from "sweetalert";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import FormCheckout from "./FormCheckout";
 
 
 function Carrito(){
 
     const context = useContext(cartContext)
     const { cart, getTotalPrice } = context;
+
    
     if (cart.length === 0 ){
         return(         
@@ -19,11 +21,11 @@ function Carrito(){
         )
     }else{
 
-    async function CheckOut(){
+    async function CheckOut(userData){
         
         const order = {
             Items: cart,
-            Comprador: {nombre: "Pedro perez"},
+            Comprador: userData,
             Total: getTotalPrice() ,
             Fecha: new Date(),
         };
@@ -36,13 +38,15 @@ function Carrito(){
             icon: "success",
           });
 
+        
     }
 
-    return(
+
+    return (
         <div>
             
             <div className="h1Carrito">
-            <h1>Tu carro de compras:</h1>
+                <h1>Tu carro de compras:</h1>
             </div>
 
             {cart.map( (item) => (
@@ -57,54 +61,16 @@ function Carrito(){
                         <FontAwesomeIcon icon={faTrash} />
                     </button>
                       
-                    <hr />
-                </div>               
+                    <hr /> 
+                </div>                  
             ))}
             <h3>El total de tu compra es: <strong className="colorPrecioTotal">${getTotalPrice()}</strong></h3>
-
-            <hr />
-
-            <div className="formContenedor">
-                <h2>Ingresa los datos para finalizar</h2>
-                <form>
-                    <div className="inputFinalizar">
-                        <label for="nombre" >
-                            <p>Nombres: </p>
-                        </label>
-                        <input type="nombre" placeholder="Ingresa tu nombre"/>
-                    </div>
-
-                    <div className="inputFinalizar">
-                        <label for="apellido">
-                            <p>Apellidos: </p>
-                        </label>
-                        <input type="apellido" placeholder="Ingresa tus apellidos" />
-                    </div>
-
-                    <div className="inputFinalizar">
-                        <label for="email">
-                            <p>Correo electronico: </p>
-                        </label>
-                        <input type="email" placeholder="example@email.com" />
-                    </div>
-
-                    <div className="inputFinalizar">
-                        <label for="direccion">
-                            <p>Direccion de entrega: </p>
-                        </label>
-                        <input type="direccion" placeholder="Direccion de entrega" />
-                    </div>
-
-                </form>
-            </div>
-
-            <hr />
-            <button onClick={CheckOut} className="botonComprar">Finalizar comprar</button>
-        </div>
     
-)
+            <hr />
 
-}
-}
+            <FormCheckout onCheckout= {CheckOut}/>
+        </div>
+)
+}}
 
 export default Carrito;

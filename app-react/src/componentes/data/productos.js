@@ -32,4 +32,22 @@ const Arrayproductos = [
   color: "Color: Verde",
   precio: 800,
   categoria: "Calzado para montaña"}
+  ,
+  {
+  id:105,
+  img: "https://cdn.pixabay.com/photo/2014/06/18/18/41/running-shoe-371624_1280.jpg",
+  titulo:"depor", 
+  color: "Color: Rosa",
+  precio: 700,
+  categoria: "Deportivo"
+  }
+  ,
+  {
+  id:106,
+  img: "https://cdn.pixabay.com/photo/2017/02/06/11/38/hiking-2042599_1280.jpg",
+  titulo: "Caf",
+  color: "cafe",
+  precio: 550,
+  categoria: "Calzado para montaña"
+  }
 ]

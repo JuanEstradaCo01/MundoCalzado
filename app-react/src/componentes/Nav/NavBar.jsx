@@ -2,7 +2,6 @@ import React, { useContext } from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import { faUser } from "@fortawesome/free-solid-svg-icons"
-import Logo from "../imgs/Logo.png"
 import { Link } from "react-router-dom"
 import { cartContext } from "../../context/cartContext"
 import "../item/item.css"
@@ -16,7 +15,7 @@ function NavBar() {
 
         <nav>
             <ul className="NavBar">
-                <Link to="/"><img className="LogoNav" src={Logo} alt="Logo" /></Link>
+                <Link to="/"><img className="LogoNav" src="" alt="Logo" /></Link>
 
                 <h1 className="NavTitulo">MUNDO CALZADO</h1>
 

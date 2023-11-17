@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs, doc, getDoc, query, where, addDoc } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBTK_08fBcNe1BIlOCBh5qfEwBRhdl5En4",
-  authDomain: "react-tienda-23c39.firebaseapp.com",
-  projectId: "react-tienda-23c39",
-  storageBucket: "react-tienda-23c39.appspot.com",
-  messagingSenderId: "649065675716",
-  appId: "1:649065675716:web:0fed46d72c82fee6f28291"
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: ""
 };
 
 const app = initializeApp(firebaseConfig);

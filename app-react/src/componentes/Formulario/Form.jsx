@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { contexto } from "../../App"
-import Login from "../imgs/Login.png"
 
 
 
@@ -20,7 +19,7 @@ function Formulario(props) {
     return (
         <form>
 
-            <img className="loginImg" src= {Login} alt="usuario" />
+            <img className="loginImg" src= "" alt="usuario" />
             <h2>{name}</h2>
 
             <hr />

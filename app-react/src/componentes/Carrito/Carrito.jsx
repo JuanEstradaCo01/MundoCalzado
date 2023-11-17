@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import React from "react";
 import { cartContext } from "../../context/cartContext";
 import { createOrder } from "../../servicios/firestore";
-import swal from "sweetalert";
+import swal from "sweetalert2";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
@@ -37,9 +37,17 @@ function Carrito(){
             text: "Tu compra fue exitosa, tu ID de compra es: "+ ordenId,
             icon: "success",
           });
-
         
     }
+
+    const prueba= "";
+
+    function eliminarDelCarrito (ordenId) {
+        const item = cart.find((prod) => prod.id === ordenId)
+        const indice = cart.indexOf(item)
+        prueba.remove(indice, 1)
+        //pintarItems(prueba, "eliminar")
+}
 
 
     return (
@@ -57,7 +65,7 @@ function Carrito(){
                     <p className="itemCarrito">Cantidad: {item.contador}</p>
                     <p className="itemCarrito">Color: {item.color}</p>
                     <p className="itemCarrito">Precio unitario: ${item.precio}</p>
-                    <button className="eliminar">
+                    <button onClick={eliminarDelCarrito} className="eliminar">
                         <FontAwesomeIcon icon={faTrash} />
                     </button>
                       

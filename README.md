@@ -1,1 +1,1 @@
-.
+Proyecto desplegado en el siguiente link: https://mundo-calzado.vercel.app/

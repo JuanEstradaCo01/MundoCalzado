@@ -13,7 +13,6 @@ export default function App() {
       <Cartprovider>
         <BrowserRouter>
 
-
           <NavBar />
           <Routes>
             <Route path="/" element={<ItemListContainer />} />
@@ -21,9 +20,7 @@ export default function App() {
             <Route path="/item/:id" element={<ItemDetailContainer />} />
             <Route path="*" element={<h1>Error 404: Pagina no encontrada</h1>} />
             <Route path="/carrito" element={<Carrito />} />
-
           </Routes>
-
 
         </BrowserRouter>
       </Cartprovider>

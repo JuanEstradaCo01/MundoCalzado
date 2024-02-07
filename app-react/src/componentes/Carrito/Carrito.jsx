@@ -17,7 +17,7 @@ function Carrito() {
         return (
             <>
                 <div className="containerCartEmpty">
-                    <h1 className="tittleCartEmpty">Carrito vacio  😕</h1>
+                    <h2 className="tittleCartEmpty"><strong>¡Carrito vacio!  😕</strong></h2>
                     <div>
                     <Link to="/"><FontAwesomeIcon icon={faShop} className="iconHome" /></Link>
                     </div>

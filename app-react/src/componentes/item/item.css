@@ -355,8 +355,9 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 30vh auto;
+    height: 88vh;
     flex-direction: column;
+    background-color: rgb(248, 248, 118);
 }
 
 .iconHome{

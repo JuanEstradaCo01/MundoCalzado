@@ -1,51 +1,46 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Contador from "../Contador/Contador";
 import { useParams } from "react-router-dom";
-import { useContext } from "react";
 import { cartContext } from "../../context/cartContext";
 import { getSingleItem } from "../../servicios/firestore";
 import Loader from "../Loader/Loader";
 
+function ItemDetailContainer() {
 
-function ItemDetailContainer(){
+    const [products, setProduct] = useState([]);
 
-    const [productos, setProduct] = useState([]);
-   
     let { id } = useParams();
 
-    const { cart, agregarItem } = useContext(cartContext)
-
-    console.log("cart", cart)
+    const { agregarItem } = useContext(cartContext)
 
 
     useEffect(() => {
-    
         getSingleItem(id).then((respuesta) => {
-            console.log("Encontrado", respuesta);
-
             setProduct(respuesta);
         })
     }, [id]);
 
 
-    if (productos.length === 0) {
-        return <Loader/>
-      }
-
-    function onAddToCart(contador){
-        console.log("Agregado al carrito: " , productos.titulo )
-        console.log("Cantidad de productos: ", contador)
-        agregarItem(productos, contador);
+    if (products.length === 0) {
+        return <Loader />
     }
 
-    return(
+    function onAddToCart(contador) {
+        agregarItem(products, contador);
+    }
+
+    return (
         <>
-            <img id="imgDetail" src={productos.img} alt="imagen" />
-            <h1>{productos.titulo}</h1>
-            <p>{productos.color}</p>
-            <p>Categoria: {productos.categoria}</p>  
-            <p>Precio: ${productos.precio}</p>    
-            <Contador onAddToCart={onAddToCart}/>                 
+            <div className="contDetail">
+                <div className="containerProductDetails">
+                    <img id="imgDetail" src={products.img} alt="imagen" />
+                    <h1>{products.titulo}</h1>
+                    <p><strong>Color:</strong> {products.color}</p>
+                    <p><strong>Categoria:</strong> {products.categoria}</p>
+                    <p><strong>Precio:</strong> <strong>${products.precio}</strong></p>
+                    <Contador onAddToCart={onAddToCart} />
+                </div>
+            </div>
         </>
     )
 }

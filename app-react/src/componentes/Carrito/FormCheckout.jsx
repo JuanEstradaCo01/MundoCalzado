@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 export default function FormCheckout({onCheckout}) {
     const [ userData, setUserData ] = useState({
@@ -33,8 +33,7 @@ export default function FormCheckout({onCheckout}) {
     }
 
     return (
-        <div>
-    
+        <>  
             <div className="formContenedor">
                 <h2 className="h2form">Ingresa los datos para finalizar:</h2>
                 <form>
@@ -70,13 +69,10 @@ export default function FormCheckout({onCheckout}) {
     
                     <hr />
 
-                    <button onClick={submit} className="botonComprar">Finalizar comprar</button>
-    
-
-    
+                    <button onClick={submit} className="botonComprar">Finalizar comprar</button>  
                 </form>
             </div>    
-        </div>
+        </>
     );
 }
 

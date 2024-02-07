@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs, doc, getDoc, query, where, addDoc } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "",
-  authDomain: "",
-  projectId: "",
-  storageBucket: "",
-  messagingSenderId: "",
-  appId: ""
+  apiKey: `${process.env.REACT_APP_APIKEY}`,
+  authDomain: `${process.env.REACT_APP_AUTHDOMAIN}`,
+  projectId: `${process.env.REACT_APP_PROJECTID}`,
+  storageBucket: `${process.env.REACT_APP_STORAGEBUCKET}`,
+  messagingSenderId: `${process.env.REACT_APP_MESSAGINGSENDERID}`,
+  appId: `${process.env.REACT_APP_APPID}`
 };
 
 const app = initializeApp(firebaseConfig);
@@ -38,9 +38,9 @@ export async function getItems(){
 
 
 //Traer un solo elemento
-export async function getSingleItem(idURL){
+export async function getSingleItem(ID){
 
-    const docRef = doc(db, "products", idURL);
+    const docRef = doc(db, "products", ID);
     const docSnap = await getDoc(docRef);
 
     const data = docSnap.data()
@@ -52,22 +52,26 @@ export async function getSingleItem(idURL){
 
 
 //Filtrar por categoria
-export async function getItemsByCategory(categoryURL){
+export async function getItemsByCategory(category){
   const productsRef = collection(db, "products")
-  const q = query(productsRef, where ("categoria", "==", categoryURL))
+
+  const q = query(productsRef, where ("categoria", "==", category))
 
   const productsSnap = await getDocs(q)
   const documents = productsSnap.docs
     
   const docsData = documents.map((doc) => { 
-    return {id: doc.id, ...doc.data()}
+    const data = doc.data()
+    data.id = doc.id;
 
-   });
+    return data
+  });
+   
   return docsData;
 
 }
 
-
+//Crear orden de compra
 export async function createOrder(order){
   const collectionOrdersRef = collection(db, "orders")
   const respuesta = await addDoc(collectionOrdersRef, order)

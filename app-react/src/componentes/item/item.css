@@ -1,70 +1,39 @@
-.itemCardContenedor{
-    margin: 2rem;
-    padding: 2.5rem;
-    width: 50rem;
-    height: auto;
+.itemCardContenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 1rem;
+    padding: 1rem;
     background-color: rgba(5, 184, 197, 0.829);
-    border-radius: 2rem;
+    border-radius: 1rem;
+    width: 65%;
+    max-width: 35rem;
 }
 
-.itemCardContenedor:hover{
+.itemCardContenedor:hover {
     transform: translateY(-5.5px);
-    box-shadow: 3.5px 3.5px 4px 2px grey ;
+    box-shadow: 3.5px 3.5px 4px 2px grey;
 }
 
-.itemCardTitulo{
+.itemCardTitulo {
     font-weight: bolder;
     color: black;
 }
 
-.itemCardImg{
-    height: 350px;
-    width: 550px;
-    margin: 5rem;
-}
-
-.itemCardImg:hover{
+.itemCardImg:hover {
     border: red;
 }
 
-.navbar-expand-lg{
-    height: 8rem;
-}
-
-#navbarSupportedContent{
+.carrito {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.navbar-nav{
-    margin: 0rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.navbar-brand{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-weight: bolder;
-    font-size: x-large;
-}
-
-.carrito{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 15rem;
     font-size: 2rem;
 }
 
-.logo{
-    height: 6rem;
-    width: 6rem;
-}
-
-.productos{
-    
+.productos {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,129 +41,90 @@
     background-color: rgb(56, 55, 55);
 }
 
-.NavBar{
-    display: flex;
-    flex-direction: row;
-    background-color: rgb(1, 45, 51);
-    margin: 0;
-    color: white;
-}
-
-a{
-    text-decoration: none;
-    color: white;
-}
-
-.LogoNav{
-    height: 12rem;
-    width: 12rem;
-}
-
-.LogoNav:hover{
-    transform: scale(1.05)
-}
-
-.NavTitulo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    font-weight: bolder;
-    font-family: cursive;
-}
-
-.NavLi{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: end;
-    list-style: none;
-    text-decoration: none;
-    padding: 20px;
-    font-size: 1.5rem;
-}
-
-.NavA{
-    text-decoration: none;
-    
-}
-
-.BotonDetalle{
+.BotonDetalle {
     background-color: rgb(0, 0, 0);
     color: white;
     padding: 10px;
     border-radius: 1rem;
 }
 
-.BotonDetalle:hover{
+.BotonDetalle:hover {
     transform: translateY(-5px);
     background-color: beige;
     color: black;
 }
 
-.verDetalle{
+.verDetalle {
     list-style: none;
+    margin: 0rem;
+    padding: 1rem;
 }
 
 
-.contenedorCounter{
+.contenedorCounter {
     margin: 1rem;
 }
 
-.contarMenos{
+.contarMenos {
     background-color: rgb(0, 22, 68);
     color: white;
 }
-.contarMenos:hover{
+
+.contarMenos:hover {
     transform: scale(1.1)
 }
 
-.contarMas{
-  background-color: rgb(0, 22, 68);
-  color: white;
+.contarMas {
+    background-color: rgb(0, 22, 68);
+    color: white;
 }
-.contarMas:hover{
+
+.contarMas:hover {
     transform: scale(1.1)
 }
 
-.spanCounter{
+.spanCounter {
     font-weight: bolder;
     margin: 0rem .5rem 0rem .5rem;
 }
 
-.user{
+.user {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 15rem;
     margin-right: 2rem;
     font-size: 2rem;
-
 }
 
-#iconLogin{
+#iconLogin {
     margin: 5rem;
     color: grey;
     width: 6rem;
     height: 6rem;
 }
 
-.botonAgregar{
+.botonAgregar {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: black;
     width: 15rem;
     height: 2rem;
-    background-color: rgb(26, 101, 172);
+    background-color: rgb(70, 190, 90);
     border-radius: .5rem;
-  }
+    margin-top: 1rem;
+}
 
-  .botonAgregar:hover{
+.botonAgregar:hover{
+    background-color: rgb(0, 153, 89);
+}
+
+.botonAgregar:hover {
     transform: scale(1.12)
-  }
-  
-.botonComprar{
+}
+
+.botonComprar {
     background-color: rgb(146, 5, 5);
     color: rgb(255, 255, 255);
     padding: .5rem 2rem;
@@ -202,34 +132,34 @@ a{
     border-radius: 2rem;
 }
 
-.botonComprar:hover{
+.botonComprar:hover {
     background-color: rgb(255, 0, 0);
     transform: scale(1.1);
 }
 
-.count{
+.count {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.loginImg{
+.loginImg {
     width: 6rem;
     height: 6rem;
 }
 
-img{
+img {
     border-radius: 2rem;
 }
 
-#imgDetail{
+#imgDetail {
     margin-top: 4rem;
-    width: 35rem;
+    width: 80%;
     border-radius: 2rem;
 }
 
-.carritoContenedor{
+.carritoContenedor {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -238,16 +168,16 @@ img{
     border-radius: 2rem;
 }
 
-.imgCarrito{
+.imgCarrito {
     margin: 1rem;
     width: 20rem;
 }
 
-.itemCarrito{
+.itemCarrito {
     margin: 3.5rem;
 }
 
-.h1Carrito{
+.h1Carrito {
     margin-top: 1rem;
     height: 7rem;
     background-color: rgba(251, 255, 6, 0.925);
@@ -256,11 +186,11 @@ img{
     align-items: center;
 }
 
-.colorPrecioTotal{
+.colorPrecioTotal {
     color: green;
 }
 
-.inputFinalizar{
+.inputFinalizar {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -268,21 +198,21 @@ img{
     color: white;
 }
 
-.formContenedor{
+.formContenedor {
     font-size: 1.3rem;
     background-color: rgb(41, 39, 39);
     padding-top: 3rem;
     margin-bottom: 3rem;
 }
 
-input{
+input {
     width: 25;
     background-color: rgb(75, 72, 72);
     border-radius: 1rem;
     margin-right: 0rem;
 }
 
-.eliminar{
+.eliminar {
     width: 3rem;
     height: 3rem;
     color: red;
@@ -290,22 +220,164 @@ input{
     background-color: rgb(238, 238, 114);
 }
 
-.eliminar:hover{
+.eliminar:hover {
     transform: scale(1.2);
 }
 
-.h2form{
+.h2form {
     color: white;
 }
 
-.borrarDatosForm{
+.borrarDatosForm {
     margin: 2rem;
     border-radius: 1rem;
     background-color: black;
     color: white;
 }
 
-.borrarDatosForm:hover{
+.borrarDatosForm:hover {
     transform: scale(1.1);
     background-color: rgb(48, 46, 46);
+}
+
+.divLogo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: -2rem;
+}
+
+.divLogo img {
+    width: 10rem;
+    margin-left: 1rem;
+}
+
+button {
+    border-color: transparent;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+input {
+    padding: .5rem;
+    border-color: transparent;
+}
+
+.me-auto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.me-auto a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto .5rem;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1.2rem;
+    width: 95%;
+}
+
+.me-auto a:hover {
+    color: rgb(5, 165, 214);
+}
+
+.dropdown-item a {
+    color: grey;
+}
+
+.containerLinksA {
+    display: flex;
+    width: 100%;
+}
+
+.containerLinksA a {
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media screen and (max-width: 991px) {
+    .containerLinksA {
+        flex-direction: column;
+    }
+
+    .containerLinksA a {
+        justify-content: center;
+    }
+}
+
+.itemCardContenedor img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem auto;
+    width: 80%;
+}
+
+.divLogo h3 {
+    font-weight: bolder;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+.contDetail {
+    padding: 4rem 2rem;
+    background-color: black;
+}
+
+.containerProductDetails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 2rem auto;
+    color: white;
+    padding: 3.5rem;
+    background-color: rgb(39, 38, 38);
+    border-radius: 1rem;
+    max-width: 35rem;
+}
+
+.containerCartEmpty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30vh auto;
+    flex-direction: column;
+}
+
+.iconHome{
+    font-size: 5rem;
+    margin-top: 1rem;
+    color: rgb(89, 182, 3);
+}
+
+.iconHome:hover{
+    transform: scale(1.1);
+    color: rgb(13, 49, 4);
+}
+
+.iconMain{
+    font-size: 1.5rem;
+}
+
+.contarMas, .contarMenos{
+    width: 3rem;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    border-radius: 50%;
+    padding: .5rem;
 }

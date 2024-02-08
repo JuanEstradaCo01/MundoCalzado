@@ -19,7 +19,7 @@ function Carrito() {
                 <div className="containerCartEmpty">
                     <h2 className="tittleCartEmpty"><strong>¡Carrito vacio!  😕</strong></h2>
                     <div>
-                    <Link to="/"><FontAwesomeIcon icon={faShop} className="iconHome" /></Link>
+                        <Link to="/"><FontAwesomeIcon icon={faShop} className="iconHome" /></Link>
                     </div>
                 </div>
             </>
@@ -52,17 +52,20 @@ function Carrito() {
 
                 {cart.map((item) => (
                     <div className="carritoContenedor">
-                        <hr />
+                        <div className="contenedorImgCarrito">
                         <img className="imgCarrito" src={item.img} alt="imagen" />
-                        <h3 className="itemCarrito">{item.titulo}</h3>
-                        <p className="itemCarrito">Cantidad: {item.contador}</p>
-                        <p className="itemCarrito">Color: {item.color}</p>
-                        <p className="itemCarrito">Precio unitario: <strong>${item.precio}</strong></p>
-                        <button onClick={() => { eliminarItemCarrito(item.id) }} id={item.id} className="eliminar">
-                            <FontAwesomeIcon icon={faTrash} />
-                        </button>
+                        </div>
 
-                        <hr />
+                        <div className="contenedorItemCarrito">
+                            <h3 className="itemCarrito">{item.titulo}</h3>
+                            <p className="itemCarrito"><strong>Cantidad:</strong> {item.contador}</p>
+                            <p className="itemCarrito"><strong>Color:</strong> {item.color}</p>
+                            <p className="itemCarrito"><strong>c/u: ${item.precio}</strong></p>
+                            <p className="itemCarrito"><strong>Total: ${item.precio * item.contador}</strong></p>
+                            <button onClick={() => { eliminarItemCarrito(item.id) }} id={item.id} className="eliminar">
+                                <FontAwesomeIcon icon={faTrash} />
+                            </button>
+                        </div>
                     </div>
                 ))}
                 <h3>El total de tu compra es: <strong className="colorPrecioTotal">${getTotalPrice()}</strong></h3>

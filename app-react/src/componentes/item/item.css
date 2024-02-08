@@ -161,20 +161,70 @@ img {
 
 .carritoContenedor {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     margin: 4rem;
     background-color: rgb(238, 238, 114);
     border-radius: 2rem;
 }
 
-.imgCarrito {
-    margin: 1rem;
-    width: 20rem;
+.contenedorItemCarrito{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .itemCarrito {
-    margin: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0rem 1rem;
+}
+
+.imgCarrito {
+    margin: 1rem;
+    max-width: 20rem;
+}
+
+@media screen and (max-width: 1150px) {
+    .contenedorItemCarrito{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        font-size: .8rem;
+    }
+
+    .contenedorItemCarrito button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+
+    .carritoContenedor{
+        margin: 4rem 1rem;
+    }
+
+    .imgCarrito{
+        width: 100%;
+        margin-left: 2rem;
+    }
+
+    .itemCarrito{
+        margin: .5rem 0rem;
+    }
+
+    .carritoContenedor{
+        justify-content: space-around;
+    }
+
+    .contenedorImgCarrito{
+        width: 50%;
+    }
+}
+
+.contenedorItemCarrito strong{
+    margin: 0rem .5rem;
 }
 
 .h1Carrito {
@@ -218,6 +268,7 @@ input {
     color: red;
     border: transparent;
     background-color: rgb(238, 238, 114);
+    font-size: 1.2rem;
 }
 
 .eliminar:hover {

@@ -69,7 +69,7 @@ export default function FormCheckout({onCheckout}) {
     
                     <hr />
 
-                    <a href="https://mundo-calzado.vercel.app/"><button onClick={submit} className="botonComprar">Finalizar comprar</button></a>  
+                    <button onClick={submit} className="botonComprar">Finalizar comprar</button> 
                 </form>
             </div>    
         </>

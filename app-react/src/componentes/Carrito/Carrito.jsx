@@ -1,7 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { cartContext } from "../../context/cartContext";
 import { createOrder } from "../../servicios/firestore";
-import swal from "sweetalert2";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { faShop } from "@fortawesome/free-solid-svg-icons";
@@ -12,6 +13,8 @@ import "../item/item.css"
 function Carrito() {
 
     const { cart, getTotalPrice, eliminarItemCarrito } = useContext(cartContext)
+
+    const MySwal = withReactContent(Swal)
 
     if (cart.length === 0) {
         return (
@@ -25,23 +28,26 @@ function Carrito() {
             </>
         )
     } else {
-        async function CheckOut(userData) {
+        async function Checkout(userData) {
+            console.log(userData)
 
             const order = {
                 Items: cart,
-                Comprador: userData,
+                Comprador: userData.nombres,
                 Total: getTotalPrice(),
-                Fecha: new Date(),
+                Fecha: new Date().toLocaleString(),
             };
 
             const ordenId = await createOrder(order);
 
-            await swal({
+            MySwal.fire({
+                show:true,
                 title: "¡Gracias por tu compra!",
                 text: "Tu compra fue exitosa, tu ID de compra es: " + ordenId,
                 icon: "success",
+                showConfirmButton: false,
+                footer: "<a href='https://mundo-calzado.vercel.app/'><button class='btnAcept'>Aceptar</button></a>"
             });
-
         }
 
         return (
@@ -72,7 +78,8 @@ function Carrito() {
 
                 <hr />
 
-                <FormCheckout onCheckout={CheckOut} />
+                <FormCheckout onCheckout={Checkout} />
+                
             </>
         )
     }

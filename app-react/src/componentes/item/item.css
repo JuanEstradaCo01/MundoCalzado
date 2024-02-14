@@ -433,3 +433,16 @@ input {
     border-radius: 50%;
     padding: .5rem;
 }
+
+.btnAcept{
+    background-color: black;
+    color: rgb(134, 131, 131);
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+}
+
+.btnAcept:hover{
+    background-color: rgb(69, 177, 65);
+    color: black;
+    transform: scale(1.2)
+}
